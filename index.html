@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MelonBot</title>
+    <link rel="icon" type="image/png" href="melon2.png">
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+</head>
+<body>
+    <div id="seuChat" class="chatbox">
+        <img src="melon.png" alt="melonicon">
+        <h2>MelonBot</h2>
+        <button onclick="ouvir()">Fale aqui :3</button>
+        <div id="textofalado"></div>
+    </div>
+
+    <script>
+         const pergunta = [
+        "qual a importância do preservativo",
+        "quais são os métodos anticoncepcionais",
+        "quais os efeitos mais comuns do anticoncepcional",
+        "qual o hormônio que estimula a produção de leite",
+        "qual o nome dado à inflamação da mama durante a amamentação"
+    ];
+
+    const resposta = [
+        "Porque ele é o único método que oferece dupla proteção.",
+        "Existem vários tipos, entre eles: barreira, hormonais, intrauterinos e comportamentais.",
+        "Dores de cabeça, inchaço, alterações de humor, corrimento vaginal e alteração do desejo sexual.",
+        "Prolactina. Ela é liberada pela hipófise em resposta à sucção do bebê no peito.",
+        "Mastite. É uma condição comum que pode ser causada pelo acúmulo de leite ou pela pressão do bebê ao mamar."
+    ];
+    
+        function falar(texto){
+            const mfala = new SpeechSynthesisUtterance(texto);
+
+            mfala.lang = "pt-br";
+            mfala.rate = 1;
+            window.speechSynthesis.speak(mfala);
+            document.getElementById("textofalado").innerText = texto;
+        }
+
+        function ouvir(){
+            const entender = new webkitSpeechRecognition();
+            entender.lang = "pt-BR";
+            entender.start();
+            entender.onresult = function(event){
+                const textofalado = event.results[0][0].transcript.toLowerCase();
+
+                for (let i = 0; i < pergunta.length; i++) {
+                    if (textofalado.includes(pergunta[i])) {
+                        falar(resposta[i]);
+                        return;
+                    }
+                }
+
+                falar("Desculpe-me, nao entendi");
+            }
+        }
+    </script>
+
+</body>
+</html>

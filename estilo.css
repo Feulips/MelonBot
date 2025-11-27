@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #66b6ab url("fundo.jpeg") no-repeat center/cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Caixa principal */
+.chatbox {
+    background: rgba(34, 34, 34, 0.85);
+    padding: 30px;
+    border-radius: 12px;
+    border: 2px solid #d85da9;
+    text-align: center;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow:
+        0 0 10px #ff4fd07e,
+        0 0 20px #ff4fcf,
+        0 0 40px #ff4fd05b,
+        0 0 60px rgba(255, 79, 207, 0.7);
+}
+
+/* Título */
+.chatbox h3 {
+    margin: 0 0 10px;
+    font-weight: bold;
+}
+
+/* Botão */
+.chatbox button {
+    background: #4a9f3d;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+/* Hover suave */
+.chatbox button:hover {
+    background: #d85da9;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #d85da9;
+}
+
+/* Titulo */
+.chatbox h2{
+    font-weight: 300;
+    font-family: cursive, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+}
