@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: #66b6ab url("fundo.jpeg") no-repeat center/cover;
+    background: #66b6ab url("fundo.webp") no-repeat center/cover;
     color: #fff;
     display: flex;
     justify-content: center;
@@ -58,4 +58,5 @@ body {
     font-weight: 300;
     font-family: cursive, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
+
 }
